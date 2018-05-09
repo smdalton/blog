@@ -1,0 +1,15 @@
+
+{#inherit from the base html with links to materialize and js#}
+{% extends "techblog_app/base.html" %}
+{#Define which section of the base html template we are going to be injecting to#}
+{% block body_block %}
+
+
+<button onclick="test_again()">Test me</button>
+
+<nav>here are some links to other parts of my website</nav>
+<a href="/blog">Blog</a>
+<a href=""/">Another link</a>
+
+
+{% endblock %}

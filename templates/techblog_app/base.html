@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+
 {%  load staticfiles %}
 
 <script src="{% static "js/materialize.js" %}"></script>
@@ -9,5 +9,7 @@
     <title>Home</title>
 </head>
 <body>
+ {% block body_block %}
 
+ {% endblock %}
 </body>
