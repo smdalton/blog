@@ -19,11 +19,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls import include, url
+from django.conf.urls.static import static
 from techblog import views as tech_blog_views
 from . import views
 
 urlpatterns = [
     url(r'^$', views.landing, name="home_page"),
     url(r'^admin/', admin.site.urls),
-    url(r'^blog', include('techblog.urls'))
-]
+    url(r'^blog/', include('techblog.urls'))
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

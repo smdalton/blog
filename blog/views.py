@@ -3,4 +3,7 @@ from django.shortcuts import render
 
 
 def landing(request):
-    return HttpResponse('This is the generic landing page')
+    """
+        Landing page will contain
+    """
+    return render(request, 'techblog_app/homepage.html')

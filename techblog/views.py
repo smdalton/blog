@@ -10,8 +10,10 @@ def home(request):
 
 
 def home_from_techblog(request):
-    return HttpResponse('Homepage from techblog routes')
+    return render(request, 'techblog_app/postlist.html')
 
+def projects(request):
+    return render(request, )
 
 def posts(request):
-    return render(request, 'homepage.html')
+    return render(request, 'techblog_app/homepage.html')

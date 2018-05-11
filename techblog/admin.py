@@ -4,11 +4,12 @@ from django.contrib import admin
 
 from .models import Post, UserProfile
 
+admin.site.header = "Blog Management Admin"
+
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+    list_display = ['get_post_title']
 
-class UserProfileAdmin(admin.ModelAdmin):
+    def get_post_title(self, obj):
+        return obj.headline
 
-
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(UserProfile, UserProfileAdmin)

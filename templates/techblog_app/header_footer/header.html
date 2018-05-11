@@ -1,10 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "techblog_app/base.html" %}
+{% load static %}
+{% block nav_block %}
+<header>
+    <nav class="navbar navbar-dark bg-light fixed-top scrolling-navbar">
+        <div class="container-fluid">
+            <h1 class="text-dark" style="display: inline;">Web Gyre</h1>
+            <div class=" d-none d-md-block btn-group " role="group">
+                <a href="/" class="btn btn-md btn-outline-dark">Blog</a>
+                <a href="/about" class="btn btn-md btn-outline-dark">About</a>
+            </div>
+        </div>
+
+        <div class="dropdown navbar-burger ">
+            <button class="btn btn-outline-dark float-right secondary d-block d-md-none dropdown-toggle" type="button"
+                    id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" onclick="$('.dropdown-toggle').dropdown()">
+                Navigation
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Blog</a>
+                <a class="dropdown-item" href="#">About</a>
+                <a class="dropdown-item" href="#">Projects</a>
+            </div>
+        </div>
+
+
+    </nav>
+
+    </div>
+</header>
+{% endblock %}

@@ -1,15 +1,63 @@
-
 {#inherit from the base html with links to materialize and js#}
 {% extends "techblog_app/base.html" %}
-{#Define which section of the base html template we are going to be injecting to#}
+{% load staticfiles %}
+
+{# Define a navigation block that is reusable#}
+{% block nav_block %}
+    {% include "techblog_app/header_footer/header.html" %}
+{% endblock %}
+
 {% block body_block %}
+    <div class="container">
+        <br><br><br><br>
 
 
-<button onclick="test_again()">Test me</button>
 
-<nav>here are some links to other parts of my website</nav>
-<a href="/blog">Blog</a>
-<a href=""/">Another link</a>
+        <br><br><br>
+        <div class="card-deck">
+            <div class="card">
+                <div class="card-header rgba-cyan-strong lighten-1 white-text">Interested in hiring me?</div>
+                <div class="card-body">
+                    <h4 class="card-title"> Portfolio</h4>
+                    <p class="card-text">Be sure to check out my portfolio to see what kind of work I can do</p>
+                    <a class="btn rgba-cyan-strong ">Visit Portfolio</a>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
+                <div class="card-body">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a class="btn btn-deep-orange">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <div class="card-deck">
+            <div class="card ">
+                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
+                <div class="card-body">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a class="btn btn-deep-orange">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
+                <div class="card-body">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a class="btn btn-deep-orange">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
 
 
+{% block footer_block %}
+    <br>
+    {% include "techblog_app/header_footer/footer.html" %}
 {% endblock %}
