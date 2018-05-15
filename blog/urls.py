@@ -26,5 +26,8 @@ from . import views
 urlpatterns = [
     url(r'^$', views.landing, name="home_page"),
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('techblog.urls'))
+    url(r'^about/$', views.about, name='about_page'),
+    url(r'^projects/$', views.projects, name='projects'),
+    url(r'^blog/', include('techblog.urls')),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

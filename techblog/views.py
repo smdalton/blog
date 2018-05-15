@@ -12,8 +12,5 @@ def home(request):
 def home_from_techblog(request):
     return render(request, 'techblog_app/postlist.html')
 
-def projects(request):
-    return render(request, )
-
 def posts(request):
     return render(request, 'techblog_app/homepage.html')

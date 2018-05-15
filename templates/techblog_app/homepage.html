@@ -9,50 +9,56 @@
 
 {% block body_block %}
     <div class="container">
-        <br><br><br><br>
+        <div class="card">
+
+            <div class="card-body">
+            <div class="card-title"><h1 class="display-5">Home</h1></div>
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="card">
+
+                            <div class="card-image">
+                                <img class="img-fluid " src="{% static 'images/IMG_1192.jpg' %}"
+                                     style=""
+                                     alt="">
+                            </div>
+                        </div>
+                    </div>
 
 
+                    <div class="col-md-6">
 
-        <br><br><br>
-        <div class="card-deck">
-            <div class="card">
-                <div class="card-header rgba-cyan-strong lighten-1 white-text">Interested in hiring me?</div>
-                <div class="card-body">
-                    <h4 class="card-title"> Portfolio</h4>
-                    <p class="card-text">Be sure to check out my portfolio to see what kind of work I can do</p>
-                    <a class="btn rgba-cyan-strong ">Visit Portfolio</a>
+                         <div class="card-image float-right">
+
+
+                         </div>
+                        <div>
+                            <br>
+                            <br>
+                            <p>I am graduating from University of California Santa Cruz with a Bachelors Degree in
+                                Computer
+                                Science this Spring
+                            </p>
+                            <br>
+                            <p>I am creating this site mainly to host a personal blog that I will be maintaining and
+                                improving
+                                as
+                                time goes on. For more information on the stack I am running be sure to visit the
+                                <strong><a
+                                        href="/about">about</a></strong> page.</p>
+                            <p>Thats about it for now, as this is week 7 in my last quarter and I am quite busy building
+                                a group
+                                web app</p>
+                    </div>
+
                 </div>
-            </div>
-            <div class="card ">
-                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
-                <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a class="btn btn-deep-orange">Go somewhere</a>
-                </div>
+
             </div>
         </div>
 
-        <hr>
-        <div class="card-deck">
-            <div class="card ">
-                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
-                <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a class="btn btn-deep-orange">Go somewhere</a>
-                </div>
-            </div>
-            <div class="card ">
-                <div class="card-header deep-orange lighten-1 white-text">Featured</div>
-                <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a class="btn btn-deep-orange">Go somewhere</a>
-                </div>
-            </div>
-        </div>
 
+    </div>
     </div>
 {% endblock %}
 

@@ -9,5 +9,6 @@ from django.conf import settings
 
 urlpatterns = [
     url(r'^$', views.home_from_techblog, name="home_page"),
+
     # url(r'')
 ]
