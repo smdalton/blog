@@ -1,16 +1,26 @@
-{%  extends "techblog_app/base.html" %}
+{% extends "techblog_app/base.html" %}
 {% load staticfiles %}
-{%  block footer_block %}
+{% block footer_block %}
 
-<nav class="navbar navbar-light bg-light fixed-bottom bg-light">
-    <hr>
-    <a href="https://www.github.com/smdalton">
-    <button type="button" class="btn btn-sm black btn-git">
-        <i class="fa fa-github pr-1"></i>Github</button>
-    </a>
-    <a href="mailto:shanemdalton@gmail.com">
-    <button type="button" class="btn btn-sm badge-danger btn-email"><i class="fa fa-envelope pr-1"></i> Email</button>
-    </a>
-</nav>
+    <nav class="navbar navbar-light bg-light fixed-bottom bg-light">
+        <hr>
 
-{%  endblock %}
+            <a href="https://www.github.com/smdalton">
+                <button type="button" class="btn btn-sm black btn-git">
+                    <i class="fa fa-github pr-1"></i>Github
+                </button>
+            </a>
+            <a href="mailto:shanemdalton@gmail.com">
+                <button type="button" class="btn btn-sm badge-danger btn-email"><i class="fa fa-envelope pr-1"></i>
+                    Email
+                </button>
+            </a>
+            <a href="https://www.linkedin.com/in/smdatucsc/">
+                <button type="button" class="btn btn-sm btn-outline-default btn-li"><i class="fa fa-linkedin pr-lg-2"></i>
+                    Linkedin
+                </button>
+            </a>
+
+    </nav>
+
+{% endblock %}

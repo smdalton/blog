@@ -1,28 +1,41 @@
 {% extends 'techblog_app/base.html' %}
-{%  load staticfiles %}
+{% load staticfiles %}
 
 {% block nav_block %}
-{% include "techblog_app/header_footer/header.html" %}
+    {% include "techblog_app/header_footer/header.html" %}
 {% endblock %}
 
 
 {% block body_block %}
 
-<div class="container card">
-<div class="title display-3">About</div>
-    <div class="card-body">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aperiam, consectetur distinctio dolorem, earum error exercitationem, expedita fugiat inventore laboriosam laudantium magni neque omnis praesentium repellat soluta voluptates? Unde!
-</p>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-title display-4"><span>About This Site</span></div>
+                <p>
+                    This website was built using the following:
+                <ul>
+                    <li></li>
+                </ul>
+                </p>
+            </div>
+        </div>
+        <br>
+    <div class="card">
+            <div class="card-body">
+                <div class="card-title display-4"><span>About This Developer</span></div>
+                <p>
+                    This website was built using the following:
+                <ul>
+                    <li></li>
+                </ul>
+                </p>
+            </div>
+        </div>
 
-
-</div>
-
-<div class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur, cum debitis delectus dolore doloremque error est excepturi expedita laborum, minima modi natus quaerat quasi repellendus saepe sequi tempora tenetur?</div>
-</div>
-
+    </div>
 {% endblock %}
 
-
-{%  block footer_block %}
-    {%  include "techblog_app/header_footer/footer.html" %}
+{% block footer_block %}
+    {% include "techblog_app/header_footer/footer.html" %}
 {% endblock %}

@@ -10,7 +10,7 @@ def home(request):
 
 
 def home_from_techblog(request):
-    return render(request, 'techblog_app/postlist.html')
+    return render(request, 'techblog_app/blog.html')
 
 def posts(request):
     return render(request, 'techblog_app/homepage.html')

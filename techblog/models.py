@@ -13,13 +13,15 @@ class UserProfile(models.Model):
 class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='default value')
     # Headline is for the display card
-    headline = models.CharField(max_length=120)
+    headline = models.CharField(max_length=250)
     headline_image = models.ImageField(upload_to='media/blog_content/headline-photos', blank=False)
     opening = models.CharField(max_length=500)
+    main_image = models.ImageField(upload_to='media/blog_content')
     image1 = models.ImageField(upload_to='media/blog_content')
     image2 = models.ImageField(upload_to='media/blog_content')
     image3 = models.ImageField(upload_to='media/blog_content')
     image4 = models.ImageField(upload_to='media/blog_content')
     image5 = models.ImageField(upload_to='media/blog_content')
     content = models.CharField(max_length=5000)
+    date = models.DateTimeField()
 

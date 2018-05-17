@@ -1,34 +1,48 @@
 {% extends "techblog_app/base.html" %}
 {% load static %}
 {% block nav_block %}
-<header>
-
-    <nav class="navbar navbar-light bg-light scrolling-navbar">
+    <header>
         <div class="container-fluid">
-            <div>
-            <h1 class="text-dark display-2 text-capitalize" style="">Shane Dalton</h1>
-            <span class="text-dark">&nbsp;A personal Website</span>
-            </div>
-                <div class=" d-none d-md-block btn-group " role="group">
-                <a href="/" class="btn btn-outline-dark">Blog</a>
-                <a href="/about" class="btn btn-outline-dark">About</a>
-            </div>
-        </div>
+            <div class=" position-fixed">
 
-        <div class="dropdown navbar-burger ">
-            <button class="btn btn-outline-dark float-right secondary d-block d-md-none dropdown-toggle" type="button"
-                    id="dropdownMenuButton" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" onclick="$('.dropdown-toggle').dropdown()">
-                Navigation
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Blog</a>
-                <a class="dropdown-item" href="#">About</a>
-                <a class="dropdown-item" href="#">Projects</a>
+
+                <div class="list-group btn-group-vertical " {# style="padding: 50px;#} style="margin-left: 5px;">
+                    {#terrible hack to get these buttons to align correctly, hidden button is offset incorrectly#}
+                    <a class="btn btn-sm btn-outline-primary" style="display: none" href="">Login</a>
+                    <a class="btn btn-sm btn-outline-primary" href="/login">Login</a>
+                    <a class="btn btn-sm btn-outline-danger" href="/post">Post</a>
+                    <a class="btn btn-sm btn-outline-default" href="/signup">Signup</a>
+                </div>
+
+
             </div>
-        </div>
-    </nav>
-    <br>
-    <hr>
-</header>
+            <nav class="navbar navbar-light bg-light scrolling-navbar">
+                <div class="container-fluid">
+                    <div>
+                        <h1 class="display-4 font-weight-bold font-weight-bold text-dark  text-capitalize">
+                            Shane Dalton</h1><span class="">&nbsp;<strong>A personal Website</strong></span>
+                    </div>
+                    <div class=" d-none d-md-block btn-group " role="group">
+                        <a href="/" class="btn btn-outline-dark font-weight-bold"><span>Home</span></a>
+                        <a href="/blog" class="btn btn-outline-dark smd-button font-weight-bold"><span>Blog</span></a>
+                        <a href="/about" class="btn btn-outline-dark"><span><strong
+                                class="font-weight-bold">About</strong></span></a>
+                    </div>
+                </div>
+
+                <div class="dropdown navbar-burger ">
+                    <button class="btn btn-outline-dark float-right secondary d-block d-md-none dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false" onclick="$('.dropdown-toggle').dropdown()">
+                        Navigation
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Blog</a>
+                        <a class="dropdown-item" href="#">About</a>
+                        <a class="dropdown-item" href="#">Projects</a>
+                    </div>
+                </div>
+            </nav>
+    </header>
 {% endblock %}
