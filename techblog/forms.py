@@ -6,3 +6,10 @@ from . import models
 class UserProfileForm(forms.ModelForm):
     class Meta():
         model = models.UserProfile
+        fields = '__all__'
+
+
+class PostCreationForm(forms.ModelForm):
+    class Meta():
+        model = models.Post
+        fields = '__all__'
