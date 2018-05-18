@@ -3,19 +3,7 @@
 {% block nav_block %}
     <header>
         <div class="container-fluid">
-            <div class=" position-fixed">
 
-
-                <div class="list-group btn-group-vertical " {# style="padding: 50px;#} style="margin-left: 5px;">
-                    {#terrible hack to get these buttons to align correctly, hidden button is offset incorrectly#}
-                    <a class="btn btn-sm btn-outline-primary" style="display: none" href="">Login</a>
-                    <a class="btn btn-sm btn-outline-primary" href="/login">Login</a>
-                    <a class="btn btn-sm btn-outline-danger" href="/post">Post</a>
-                    <a class="btn btn-sm btn-outline-default" href="/signup">Signup</a>
-                </div>
-
-
-            </div>
             <nav class="navbar navbar-light bg-light scrolling-navbar">
                 <div class="container-fluid">
                     <div>
@@ -24,7 +12,7 @@
                     </div>
                     <div class=" d-none d-md-block btn-group " role="group">
                         <a href="/" class="btn btn-outline-dark font-weight-bold"><span>Home</span></a>
-                        <a href="/blog" class="btn btn-outline-dark smd-button font-weight-bold"><span>Blog</span></a>
+                        <a href="{% url 'blog_landing' %}" class="btn btn-outline-dark smd-button font-weight-bold"><span>TechBlog</span></a>
                         <a href="/about" class="btn btn-outline-dark"><span><strong
                                 class="font-weight-bold">About</strong></span></a>
                     </div>
@@ -38,7 +26,7 @@
                         Navigation
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Blog</a>
+                        <a class="dropdown-item" href="#">TechBlog</a>
                         <a class="dropdown-item" href="#">About</a>
                         <a class="dropdown-item" href="#">Projects</a>
                     </div>

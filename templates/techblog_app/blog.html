@@ -8,7 +8,19 @@
 {% endblock %}
 
 {% block body_block %}
+ <div class=" position-fixed" style="margin-top: 25px;">
 
+
+                <div class="list-group btn-group-vertical " {# style="padding: 50px;#} style="margin-left: 5px;">
+                    {#terrible hack to get these buttons to align correctly, hidden button is offset incorrectly#}
+                    <a class="btn btn-sm btn-outline-primary" style="display: none" href="">Login</a>
+                    <a class="btn btn-sm btn-outline-primary" href="{% url 'tech_blog_login' %}">Login</a>
+                    <a class="btn btn-sm btn-outline-danger" href="{% url 'tech_blog_post' %}">Post</a>
+                    <a class="btn btn-sm btn-outline-default" href="{% url 'tech_blog_signup' %}">Signup</a>
+                </div>
+
+
+            </div>
     <div class="container">
 
 
