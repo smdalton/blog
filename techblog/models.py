@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from markdownx.models import MarkdownxField
 
 # Create your models here.
 CATEGORIES = (
@@ -14,6 +15,9 @@ CATEGORIES = (
     ('G', 'Games'),
     ('PL', 'Plants')
 )
+
+class TestModel(models.Model):
+    test_text = MarkdownxField()
 
 
 class UserProfile(models.Model):

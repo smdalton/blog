@@ -15,3 +15,4 @@ def projects(request):
 
 def about(request):
     return render(request, 'techblog_app/about.html')
+

@@ -11,8 +11,7 @@ urlpatterns = [
     url(r'^post/$', views.techblog_post, name="post"),
     url(r'^$', views.home_from_techblog, name='blog_landing'),
     url(r'^post/$', views.techblog_post, name='tech_blog_post'),
+    url(r'^markdown_test/', views.markdown_test),
     url(r'^signup/$', views.techblog_signup_page, name='tech_blog_signup'),
     url(r'^login/$', views.techblog_login_page, name='tech_blog_login')
-
-    # url(r'')
 ]

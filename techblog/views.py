@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
-from .forms import PostCreationForm
+from .forms import PostCreationForm, MarkDownTestForm
 # Create your views here.
 
 
@@ -30,6 +30,16 @@ def techblog_post(request):
 def techblog_login_page(request):
     return render(request, 'techblog_app/login.html')
 
+
+def markdown_test(request):
+
+    if request.method == 'GET':
+        form = MarkDownTestForm()
+        return render(request,'techblog_app/markdownform.html',{'form':form})
+
+    elif request.method == 'POST':
+        print('incoming form data')
+    return HttpResponse('url test success')
 
 
 # Create a User Account Here

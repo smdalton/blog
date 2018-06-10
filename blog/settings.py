@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'markdownx',
     'livereload',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,13 +124,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 STATIC_URL = '/static/'
 
+# This is the location where all static files are collected, and eventually transferred
+# from, the target of the transfer being a remote server indicated by static_url above
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-STATICFILES_DIRS = [
-os.path.join(BASE_DIR, "static")
-]
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 LOGIN_REDIRECT_URL = '/home/'

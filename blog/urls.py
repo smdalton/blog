@@ -28,4 +28,6 @@ urlpatterns = [
                   url(r'^about/$', views.about, name='about_page'),
                   url(r'^projects/$', views.projects, name='projects'),
                   url(r'^techblog/', include('techblog.urls')),
+                  url(r'^markdownx/', include('markdownx.urls')),
+
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

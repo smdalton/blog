@@ -1,5 +1,6 @@
 from django.contrib import admin
-
+from markdownx.admin import MarkdownxModelAdmin
+from .models import TestModel
 # Register your models here.
 
 from .models import Post, UserProfile
@@ -13,3 +14,5 @@ class PostAdmin(admin.ModelAdmin):
     def get_post_title(self, obj):
         return obj.headline
 
+
+admin.site.register(TestModel, MarkdownxModelAdmin)
