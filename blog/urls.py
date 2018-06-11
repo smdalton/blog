@@ -15,19 +15,22 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+
 from django.conf import settings
 from django.conf.urls import include, url
 from django.conf.urls.static import static
-from techblog import views as tech_blog_views
+
 from . import views
 
 urlpatterns = [
-                  url(r'^$', views.landing, name="home_page"),
-                  url(r'^admin/', admin.site.urls),
-                  url(r'^about/$', views.about, name='about_page'),
-                  url(r'^projects/$', views.projects, name='projects'),
-                  url(r'^techblog/', include('techblog.urls')),
-                  url(r'^markdownx/', include('markdownx.urls')),
+    url(r'^$', views.landing, name="home_page"),
+    url(r'^admin/', admin.site.urls),
+    url(r'^about/$', views.about, name='about_page'),
+    url(r'^projects/$', views.projects, name='projects'),
+    url(r'^techblog/', include('techblog.urls')),
+    url(r'^markdownx/', include('markdownx.urls')),
 
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+              ]
+# configure static roots for serving media and such
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

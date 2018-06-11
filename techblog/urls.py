@@ -1,10 +1,8 @@
-from django.contrib import admin
-from django.urls import path
 from django.conf import settings
 from django.conf.urls import include, url
-from techblog import views
 from django.conf.urls.static import static
-from django.conf import settings
+from techblog import views
+
 
 urlpatterns = [
     url(r'^$', views.techblog_home, name='blog_landing'),
