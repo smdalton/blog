@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 # Create a User Account Here
-def techblog_signup_page(request):
+def techblog_signup(request):
 
     if request.method == 'POST':
         # process the form

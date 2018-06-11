@@ -1,5 +1,5 @@
 <h1>The Posting Page</h1>
-<form method="psot">
-    {{ form.as_p }}
-    <button> Submit! </button>
-</form>
+
+{{ post.content }}
+
+{{ post.formatted_markdown|safe }}

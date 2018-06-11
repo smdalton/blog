@@ -1,6 +1,9 @@
 {#inherit from the base html with links to materialize and js#}
+<title>Techblog Home</title>
+
 {% extends "techblog_app/base.html" %}
 {% load staticfiles %}
+{% load app_filters %}
 
 {# Define a navigation block that is reusable#}
 {% block nav_block %}
@@ -8,21 +11,20 @@
 {% endblock %}
 
 {% block body_block %}
- <div class=" position-fixed" style="margin-top: 25px;">
+
+    <div class=" position-fixed" style="margin-top: 25px;">
+        <div class="list-group btn-group-vertical" style="display:none">
+            {#terrible hack to get these buttons to align correctly, hidden button is offset incorrectly#}
+            <a class="btn btn-sm btn-outline-primary" style="display: none" href="">Login</a>
+            <a class="btn btn-sm btn-outline-primary" href="#">Login</a>
+            <a class="btn btn-sm btn-outline-danger" href="#">Post</a>
+            <a class="btn btn-sm btn-outline-default" href="#">Signup</a>
+        </div>
+    </div>
 
 
-                <div class="list-group btn-group-vertical" style="display:none">
-                    {#terrible hack to get these buttons to align correctly, hidden button is offset incorrectly#}
-                    <a class="btn btn-sm btn-outline-primary" style="display: none" href="">Login</a>
-                    <a class="btn btn-sm btn-outline-primary" href="#">Login</a>
-                    <a class="btn btn-sm btn-outline-danger" href="#">Post</a>
-                    <a class="btn btn-sm btn-outline-default" href="#">Signup</a>
-                </div>
 
-
-            </div>
     <div class="container">
-
 
 
         <section class="my-5">
@@ -30,12 +32,12 @@
             <!-- Section heading -->
             <h2 class="h1-responsive font-weight-bold text-center my-5">Recent posts</h2>
             <!-- Section description -->
-            <p class="text-center w-responsive mx-auto mb-5">Here are my most recent posts related to technology and learning</p>
+            <p class="text-center w-responsive mx-auto mb-5">Here are my most recent posts related to technology and
+                learning</p>
             <br>
 
             <!-- Grid row -->
             <div class="row">
-
                 <!-- Grid column -->
                 <div class="col-lg-5">
                     <!-- Featured image -->
@@ -78,48 +80,6 @@
 
             <hr class="my-5">
 
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class="col-lg-7">
-
-                    <!-- Category -->
-                    <a href="#!" class="pink-text"><h6 class="font-weight-bold mb-3"><i class="fa fa-image pr-2"></i>Lifestyle
-                    </h6></a>
-                    <!-- Post title -->
-                    <h3 class="font-weight-bold mb-3"><strong>Title of the news</strong></h3>
-                    <!-- Excerpt -->
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-                        provident.</p>
-                    <!-- Post data -->
-                    <p>by <a><strong>Carine Fox</strong></a>, 14/08/2018</p>
-                    <!-- Read more button -->
-                    <a class="btn btn-pink btn-md mb-lg-0 mb-4">Read more</a>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-5">
-
-                    <!-- Featured image -->
-                    <div class="view overlay rounded z-depth-2">
-                        <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(34).jpg"
-                             alt="Sample image">
-                        <a>
-                            <div class="mask rgba-white-slight"></div>
-                        </a>
-                    </div>
-
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-
-            <hr class="my-5">
             <!-- Grid row -->
             <div class="row">
                 <!-- Grid column -->

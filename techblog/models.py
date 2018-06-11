@@ -1,23 +1,12 @@
 from django.contrib.auth.models import User
 from django.db import models
 from markdownx.models import MarkdownxField
-
+from markdownx.utils import markdownify
 # Create your models here.
-CATEGORIES = (
-    ('O', 'Other'),
-    ('T', 'Technology'),
-    ('L', 'Lifestyle'),
-    ('H', 'Health and Fitness'),
-    ('F', 'Finance'),
-    ('P', 'Projects'),
-    ('C', 'Cooking'),
-    ('H', 'Hiking'),
-    ('G', 'Games'),
-    ('PL', 'Plants')
-)
+DJANGO = 'Django'
 
-class TestModel(models.Model):
-    test_text = MarkdownxField()
+
+
 
 
 class UserProfile(models.Model):
@@ -27,13 +16,33 @@ class UserProfile(models.Model):
 
 
 class Post(models.Model):
+    POST_CHOICES = (
+        ('DJBE', 'Django Backend'),
+        ('DJFE', 'Django Frontend'),
+        ('DJU', 'Django Utility'),
+        ('T', 'Technology'),
+        ('A', 'Algorithms'),
+        ('MAKE', 'Arduino and Raspberry Pi'),
+        ('CS', 'Computer Science Fundamentals'),
+        ('PHYS', 'Physics'),
+        ('MAT', 'Math')
+    )
+    title = models.CharField(max_length=100, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='default value', blank=True)
+    main_image = models.ImageField(upload_to='media/blog_content', blank=True)
+    content = MarkdownxField()
+    category = models.CharField(max_length=4, default='O', choices=POST_CHOICES, blank=True)
     # Headline is for the display card
-    category = models.CharField(max_length=4, default='O', choices=CATEGORIES, blank=True)
     headline = models.CharField(max_length=250, blank=True)
     headline_image = models.ImageField(upload_to='media/blog_content/headline-photos', blank=True)
-    opening = models.CharField(max_length=500, blank=True)
-    main_image = models.ImageField(upload_to='media/blog_content', blank=True)
-    content = models.CharField(max_length=5000, blank=True)
     date = models.DateTimeField(auto_now=True)
 
+    @property
+    def formatted_markdown(self):
+        return markdownify(self.content)
+
+    def __unicode__(self):
+        return self.title
+
+    def __str__(self):
+        return self.title

@@ -7,8 +7,11 @@ def markdown_test(request):
 
     if request.method == 'GET':
         form = MarkDownTestForm()
-        return render(request,'techblog_app/markdownform.html',{'form':form})
+        return render(request, 'techblog_app/markdownform.html', {'form': form})
 
     elif request.method == 'POST':
-        print('incoming form data')
-    return HttpResponse('url test success')
+        print(request.POST)
+
+        return HttpResponse(request, 'url test success')
+
+    return HttpResponse(request, 'url test success')
