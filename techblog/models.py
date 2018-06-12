@@ -30,7 +30,7 @@ class Post(models.Model):
 
     title = models.CharField(max_length=100, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='default value', blank=True)
-    main_image = models.ImageField(upload_to='media/blog_content', blank=True)
+    main_image = models.ImageField(upload_to='media/blog_content/main-image-photos', blank=True)
     content = MarkdownxField()
     category = models.CharField(max_length=4, default='O', choices=POST_CHOICES, blank=True)
     # Headline is for the display card

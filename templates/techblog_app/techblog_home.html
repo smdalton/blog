@@ -44,25 +44,16 @@
                         <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
                             <img class="img-fluid"
                                  src="{{ post.headline_image.url }}"
-                                 alt="Picture of post {{ post.headline }} content "
-                            >
-                            <a>
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
+                                 alt="Picture of post {{ post.headline }} content ">
+                            <a><div class="mask rgba-white-slight"></div></a>
                         </div>
-
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
                     <div class="col-lg-7">
                         <!-- Category -->
-                        <a href="#!" class="green-text">
-                            <h6 class="font-weight-bold mb-3">
-                                <i class="fa fa-cutlery pr-2"></i>
-                                Food
-                            </h6>
-                        </a>
+                        {{ post.category | map_category_to_icon |safe }}
                         <!-- Post title -->
                         <h3 class="font-weight-bold mb-3"><strong>{{ post.title }}</strong></h3>
                         <!-- Excerpt -->
@@ -70,8 +61,9 @@
                         <!-- Post data -->
                         <p>by <a><strong>{{ post.author }}</strong></a>, {{ post.date }}</p>
                         <!-- Read more button -->
-                        <a class="btn btn-deep-orange btn-md" href="{{ post.id }}">Add filter to change this color by
-                            category</a>
+                        <a class="btn btn-{{post.category | map_category_to_button_color| safe }}
+                         btn-md" href="{{ post.id }}">
+                            Read More</a>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -83,7 +75,7 @@
     </div>
 
 
-    <div>
+    <div style="display:none">
         <h2> categories test</h2>
         <p>backend {{ "DJBE"| map_category_to_icon| safe }}</p>
         <p>frontend {{ 'DJFE' | map_category_to_icon| safe }}</p>

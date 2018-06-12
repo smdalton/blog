@@ -19,13 +19,13 @@ def map_category_to_icon(category):
     print(f"\n The category at the filter is: {category}")
 
     result = f"""<a href="#!" class="{icon_color}-text">
-                    <h6 class="font-weight-bold mb-3">
+                    <h5 class="font-weight-bold mb-3">
                         <i class="fa {icon} pr-2"></i>
                                 {long_name}
-                    </h6></a>"""
+                    </h5></a>"""
     return result
 
 
 @register.filter()
 def map_category_to_button_color(category):
-    print(f"\n The category at the filter is: {category}")
+    return choices_map[category]['color']
