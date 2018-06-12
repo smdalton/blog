@@ -70,7 +70,8 @@
                         <!-- Post data -->
                         <p>by <a><strong>{{ post.author }}</strong></a>, {{ post.date }}</p>
                         <!-- Read more button -->
-                        <a class="btn btn-success btn-md" href="{{ post.id }}">Read More</a>
+                        <a class="btn btn-deep-orange btn-md" href="{{ post.id }}">Add filter to change this color by
+                            category</a>
                     </div>
                     <!-- Grid column -->
                 </div>
@@ -84,23 +85,19 @@
 
     <div>
         <h2> categories test</h2>
-
-           <p> {{ "DJBE"| map_category_to_icon| safe }}</p>
-        <p>{{ 'DJBE' | map_category_to_icon| safe }}</p>
-        <p>{{ 'DJFE' | map_category_to_icon| safe }}</p>
-        <p>{{ 'DJU' | map_category_to_icon| safe }}</p>
-        <p>{{ 'T' | map_category_to_icon| safe }}</p>
-        <p>{{ 'A' | map_category_to_icon| safe }}</p>
-        <p>{{ 'MAKE' | map_category_to_icon| safe }}</p>
-        <p>{{ 'CS' | map_category_to_icon| safe }}</p>
-        <p>{{ 'PHYS' | map_category_to_icon| safe }}</p>
-        <p>{{'MAT' | map_category_to_icon| safe }}</p>
+        <p>backend {{ "DJBE"| map_category_to_icon| safe }}</p>
+        <p>frontend {{ 'DJFE' | map_category_to_icon| safe }}</p>
+        <p>utilities {{ 'DJU' | map_category_to_icon| safe }}</p>
+        <p>Technology {{ 'T' | map_category_to_icon| safe }}</p>
+        <p>Algorithms {{ 'A' | map_category_to_icon| safe }}</p>
+        <p>Arduino and Pi {{ 'MAKE' | map_category_to_icon| safe }}</p>
+        <p>Computer Science Fundamentals {{ 'CS' | map_category_to_icon| safe }}</p>
+        <p>Physics {{ 'PHYS' | map_category_to_icon| safe }}</p>
+        <p>Mathematics {{ 'MAT' | map_category_to_icon| safe }}</p>
         </p>
     </div>
     <br><br><br>
 {% endblock %}
-
-
 {% block footer_block %}
     <br>
     {% include "techblog_app/header_footer/footer.html" %}

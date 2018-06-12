@@ -27,6 +27,7 @@ class Post(models.Model):
         ('PHYS', 'Physics'),
         ('MAT', 'Math')
     )
+
     title = models.CharField(max_length=100, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='default value', blank=True)
     main_image = models.ImageField(upload_to='media/blog_content', blank=True)
