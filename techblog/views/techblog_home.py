@@ -12,8 +12,8 @@ def techblog_home(request):
     print("compartmentalized views")
     return render(
         request,
-        'techblog_app/techblog_home.html',
+        'techblog_app/techblog_posts_landing.html',
         {
-            'posts':posts
+            'posts': posts
         }
     )

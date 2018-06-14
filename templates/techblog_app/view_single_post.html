@@ -1,0 +1,24 @@
+{% extends "techblog_app/base.html" %}
+<title>{{ post.category }}</title>
+{% block nav_block %}
+    {% include "techblog_app/header_footer/header.html" %}
+{% endblock %}
+
+{% block body_block %}
+
+{#    Want an area with the picture and title, then below it want the markdown#}
+
+    <div class="container">
+        <div class="row">
+            <div>
+                {{ post.formatted_markdown | safe }}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer_block %}
+    <br>
+    {% include "techblog_app/header_footer/footer.html" %}
+{% endblock %}

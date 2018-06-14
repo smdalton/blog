@@ -39,7 +39,7 @@
                 <!-- Grid row -->
                 <div class="row">
                     <!-- Grid column -->
-                    <div class="col-lg-5">
+                    <div class="col-sm-5">
                         <!-- Featured image -->
                         <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
                             <img class="img-fluid"
@@ -51,7 +51,7 @@
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-lg-7">
+                    <div class="col-sm-7">
                         <!-- Category -->
                         {{ post.category | map_category_to_icon |safe }}
                         <!-- Post title -->
@@ -62,7 +62,7 @@
                         <p>by <a><strong>{{ post.author }}</strong></a>, {{ post.date }}</p>
                         <!-- Read more button -->
                         <a class="btn btn-{{post.category | map_category_to_button_color| safe }}
-                         btn-md" href="{{ post.id }}">
+                         btn-md" href="{%  url  'display_post' post.id %}">
                             Read More</a>
                     </div>
                     <!-- Grid column -->

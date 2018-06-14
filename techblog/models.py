@@ -16,7 +16,7 @@ class UserProfile(models.Model):
 
 
 class Post(models.Model):
-    POST_CHOICES = (
+    CATEGORIES = (
         ('DJBE', 'Django Backend'),
         ('DJFE', 'Django Frontend'),
         ('DJU', 'Django Utility'),
@@ -32,7 +32,7 @@ class Post(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, default='default value', blank=True)
     main_image = models.ImageField(upload_to='media/blog_content/main-image-photos', blank=True)
     content = MarkdownxField()
-    category = models.CharField(max_length=4, default='O', choices=POST_CHOICES, blank=True)
+    category = models.CharField(max_length=4, default='O', choices=CATEGORIES, blank=True)
     # Headline is for the display card
     headline = models.CharField(max_length=250, blank=True)
     headline_image = models.ImageField(upload_to='media/blog_content/headline-photos', blank=True)
