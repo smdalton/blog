@@ -26,7 +26,7 @@ SECRET_KEY = '^40oy@&&opjv#_$8x6#jmb8i^=*#qcx=l076*pe(jl*_jen26-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.daltonsoftware.com','206.189.65.177']
 
 
 # Application definition
@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'blog',
+	'USER': 'owner',
+	'PASSWORD': 'dummypassword',
+	'HOST': 'localhost',
+	'PORT': '',
     }
 }
 
@@ -128,7 +132,7 @@ USE_TZ = True
 
 # This is the location where all static files are collected, and eventually transferred
 # from, the target of the transfer being a remote server indicated by static_url above
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
