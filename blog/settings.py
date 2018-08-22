@@ -25,7 +25,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daltonsoftware.com', '206.189.65.177']
+ALLOWED_HOSTS = ['daltonsoftware.com', '165.227.5.189', 'localhost']
 
 
 # Application definition
