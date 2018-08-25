@@ -27,7 +27,12 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daltonsoftware.com', '165.227.5.189', 'localhost', 'smd-blog-dev.us-west-2.elasticbeanstalk.com/']
+ALLOWED_HOSTS = ['.elasticbeanstalk.com',
+                 'daltonsoftware.com',
+                 '165.227.5.189',
+                 'localhost',
+                 'smd-blog-dev.us-west-2.elasticbeanstalk.com/'
+                 ]
 
 
 # Application definition
