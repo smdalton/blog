@@ -10,8 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 # TODO: Set this to read environment variables at load time
-production = False
+
 import os
+import uuid
+uuid = uuid.uuid4()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +27,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['daltonsoftware.com', '165.227.5.189', 'localhost']
+ALLOWED_HOSTS = ['daltonsoftware.com', '165.227.5.189', 'localhost', 'smd-blog-dev.us-west-2.elasticbeanstalk.com/']
 
 
 # Application definition
@@ -82,26 +84,25 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 DATABASES = ''
 
-if production:
+if 'RDS_DB_NAME' in os.environ:
+    SECRET_KEY = uuid.hex
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'blog',
-            'USER': 'owner',
-            'PASSWORD': 'dummypassword',
-            'HOST': 'localhost',
-            'PORT':'',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
         }
     }
 else:
-
     # SECURITY WARNING: keep the secret key used in production secret!
     SECRET_KEY = '^40oy@&&opjv#_$8x6#jmb8i^=*#qcx=l076*pe(jl*_jen26-'
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-
         }
     }
 
