@@ -2,4 +2,5 @@ container_commands:
   01_migrate:
     command: "source /opt/python/run/venv/bin/activate && python blog/manage.py migrate --noinput"
     leader_only: true
-
+  02_init:
+    command: "source /opt/python/run/venv/bin/activate && python blog/manage.py populate_db --noinput"
