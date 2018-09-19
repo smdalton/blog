@@ -5,3 +5,6 @@
 !.elasticbeanstalk/*.global.yml
 bin
 .sqlite3
+media/
+.idea
+.DS_Store
